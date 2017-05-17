@@ -1,4 +1,4 @@
-package com.wap;
+package com.wap.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
