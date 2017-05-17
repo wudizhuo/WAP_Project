@@ -1,0 +1,36 @@
+body {
+    background-image: url("./loginbackage.jpg");
+    width: 1024px;
+    height: 682px;
+    background-repeat:no-repeat;
+    background-position-x:50%;
+}
+#logintext{
+    color:#bf360c;
+    font-family: 'DejaVu Serif', Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 36px;
+    position: absolute;
+    left:23%;
+    top:30%;
+}
+#loginform{
+    color: #bf360c;
+    position: absolute;
+    left:26%;
+    top:45%;
+}
+
+input.inline{
+    color:#bf360c;
+    display: inline;
+    background-color: #a1887f ;
+    height: 20px;
+    margin-left: 15px;
+}
+#but {
+    position: absolute;
+    left:460px;
+    top:20%;
+    background-color: #a1887f ;
+}
