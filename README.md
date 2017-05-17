@@ -1,4 +1,9 @@
 # WAP_Project
     Step
-    * install MongoDB and run
+    1 install MongoDB and run
+    
+    2 run initial script 
+        `script/Script.java`
+    
+    3.
     
