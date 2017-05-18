@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="./CSS/material.min.css">
     <link rel="stylesheet" href="./CSS/login.css">
-    <script src="./CSS/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <title>Login Page</title>
     <link href="../CSS/login.css" type="text/css" rel="stylesheet"/>
 </head>
@@ -22,7 +21,7 @@
         <input class="mdl-textfield__input inline" type="text" id="pd">
         <label class="mdl-textfield__label" for="pd">Password</label>
     </div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div>
         <input id="but" type="submit" value="Login"/>
     </div>
 </form>
