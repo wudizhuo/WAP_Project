@@ -7,4 +7,7 @@ import org.mongodb.morphia.annotations.Entity;
 public class User extends BaseModel {
     public String name;
     public String password;
+
+    public User() {
+    }
 }
