@@ -1,7 +1,6 @@
-package com.wap.servlets;
+package com.wap.login;
 
-import com.mongodb.MongoClient;
-import com.wap.repositories.UserRepository;
+import org.mongodb.morphia.Datastore;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -29,8 +28,7 @@ public class Login extends HttpServlet {
     }
 
     private boolean validateUser(String name, String password) {
-        UserRepository mongo_client = new UserRepository((MongoClient) this.getServletContext()
-                .getAttribute("MONGO_CLIENT"));
-        return mongo_client.validateUser(name, password);
+        return new UserRepository((Datastore) this.getServletContext()
+                .getAttribute("DATA_STORE")).validateUser(name, password);
     }
 }
