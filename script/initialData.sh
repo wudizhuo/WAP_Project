@@ -1,1 +1,1 @@
-mongoimport --db wap --collection user --drop --file script/user.json
+mongoimport --db wap --collection User --drop --file script/user.json

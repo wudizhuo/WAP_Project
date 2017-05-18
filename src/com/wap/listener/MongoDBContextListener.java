@@ -19,9 +19,8 @@ public class MongoDBContextListener implements ServletContextListener {
                 Integer.parseInt(ctx.getInitParameter("MONGODB_PORT")));
 
         final Morphia morphia = new Morphia();
-
-        morphia.mapPackage(this.getClass().getPackage().getName());
-        final Datastore datastore = morphia.createDatastore(new MongoClient(), "wap");
+        morphia.mapPackage("com.wap.login");
+        final Datastore datastore = morphia.createDatastore(mongo, "wap");
         datastore.ensureIndexes();
 
         sce.getServletContext().setAttribute("MONGO_CLIENT", mongo);

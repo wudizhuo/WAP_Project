@@ -28,9 +28,7 @@ public class Login extends HttpServlet {
     }
 
     private boolean validateUser(String name, String password) {
-
-        UserRepository mongo_client = new UserRepository((Datastore) this.getServletContext()
-                .getAttribute("DATA_STORE"));
-        return mongo_client.validateUser(name, password);
+        return new UserRepository((Datastore) this.getServletContext()
+                .getAttribute("DATA_STORE")).validateUser(name, password);
     }
 }
