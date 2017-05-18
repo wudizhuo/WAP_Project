@@ -1,5 +1,8 @@
 package com.wap.servlets;
 
+import com.mongodb.MongoClient;
+import com.wap.repositories.UserRepository;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,41 +28,9 @@ public class Login extends HttpServlet {
         }
     }
 
-    private boolean validateUser(String name, String passKey) {
-        return true;
+    private boolean validateUser(String name, String password) {
+        UserRepository mongo_client = new UserRepository((MongoClient) this.getServletContext()
+                .getAttribute("MONGO_CLIENT"));
+        return mongo_client.validateUser(name, password);
     }
-
-//    protected boolean validateUser(String userName, String passKey) {
-//        connect userAuthenticationConnection = new connect();
-//        ResultSet rs = null;
-//        boolean test = userAuthenticationConnection.doConnection();
-//        if (test == true) {
-//            Connection con = userAuthenticationConnection.getConnect();
-//            PreparedStatement stmt = null;
-//            String sql = "select password from users where user_name = ?";
-//            try {
-//
-//                stmt = con.prepareStatement(sql);
-//                stmt.setString(1, userName);
-//                rs = stmt.executeQuery();
-//                if (!rs.first()) {
-//                    return false;
-//                }
-//            } catch (SQLException e1) {
-//                e1.printStackTrace();
-//            }
-//            String passWord = null;
-//            try {
-//
-//                passWord = rs.getString("password");
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//            if (passWord.equals(passKey)) {
-//                userAuthenticationConnection.closeConnection();
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
 }
