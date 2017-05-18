@@ -1,5 +1,3 @@
-package com.wap.listener;
-
 import com.mongodb.MongoClient;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
@@ -19,7 +17,7 @@ public class MongoDBContextListener implements ServletContextListener {
                 Integer.parseInt(ctx.getInitParameter("MONGODB_PORT")));
 
         final Morphia morphia = new Morphia();
-        morphia.mapPackage("com.wap.login");
+        morphia.mapPackage("com.wap");
         final Datastore datastore = morphia.createDatastore(mongo, "wap");
         datastore.ensureIndexes();
 
