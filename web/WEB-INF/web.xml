@@ -21,4 +21,13 @@
         <servlet-name>login</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>post_page</servlet-name>
+        <servlet-class>com.wap.post.Post</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>post_page</servlet-name>
+        <url-pattern>/post</url-pattern>
+    </servlet-mapping>
 </web-app>
