@@ -24,7 +24,7 @@
                    name="Password"
                    value="<%=user.getPassword()%>">
             <label class="mdl-textfield__label" for="sample4">Password</label>
-            <span class="mdl-textfield__error">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</span>
+            <span class="mdl-textfield__error">at least one number, one uppercase, lowercase letter, and at least 8 characters</span>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label one-line">
             <input class="mdl-textfield__input" type="text" id="Gender" name="Gender" value="<%=user.getGender()%>">
@@ -54,6 +54,7 @@
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label one-line">
             <input class="mdl-textfield__input" type="email" id="email" name="email" value="<%=user.getEmail()%>">
             <label class="mdl-textfield__label" for="email">Email</label>
+            <span class="mdl-textfield__error">should be emaill style</span>
         </div>
         <button class="mdl-button mdl-js-button mdl-button--raised">
             Save
