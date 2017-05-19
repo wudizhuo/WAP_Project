@@ -9,7 +9,7 @@
     <link href="../CSS/login.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<a href="signup.jsp" id="signup">SignUp</a>
+<a href="UserProfile.jsp" id="signup">SignUp</a>
 
 <p id="logintext">"life is short and you deserve to be happy."</p>
 

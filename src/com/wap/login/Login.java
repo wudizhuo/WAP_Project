@@ -1,11 +1,14 @@
 package com.wap.login;
 
+import com.wap.user.User;
+import com.wap.user.UserRepository;
 import org.mongodb.morphia.Datastore;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -17,7 +20,12 @@ public class Login extends HttpServlet {
         try {
             String name = request.getParameter("username");
             String password = request.getParameter("password");
-            if (validateUser(name, password)) {
+            User user = new UserRepository((Datastore) this.getServletContext()
+                    .getAttribute("DATA_STORE")).get(name, password);
+            HttpSession session = request.getSession();
+            session.setAttribute("User", user);
+
+            if (user != null) {
                 response.sendRedirect("DashBoard.jsp");
             } else {
                 out.println("Login Failure");
@@ -27,8 +35,4 @@ public class Login extends HttpServlet {
         }
     }
 
-    private boolean validateUser(String name, String password) {
-        return new UserRepository((Datastore) this.getServletContext()
-                .getAttribute("DATA_STORE")).validateUser(name, password);
-    }
 }
