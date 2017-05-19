@@ -29,11 +29,6 @@
     </div>
 </form>
 
-<%--<form  id="loginform" action="/login" method="post">--%>
-<%--Username: <input class="inline"type="text" name="username"/>--%>
-<%--Password: <input class="inline" type="password" name="password"/>--%>
-<%--<input id="but" class="inline" type="submit" value="Login"/>--%>
-<%--</form>--%>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 
