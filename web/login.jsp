@@ -9,6 +9,7 @@
     <link href="../CSS/login.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
+<a href="signup.jsp" id="signup">SignUp</a>
 
 <p id="logintext">"life is short and you deserve to be happy."</p>
 
@@ -18,11 +19,12 @@
         <label class="mdl-textfield__label" for="name">Username</label>
     </div>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input inline" type="text" id="pd">
+        <input class="mdl-textfield__input inline" type="password" id="pd">
         <label class="mdl-textfield__label" for="pd">Password</label>
     </div>
-    <div>
-        <input id="but" type="submit" value="Login"/>
+    <div id="submitcontainer">
+        <br/>
+        <input id="but" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" value="Login"/>
     </div>
 </form>
 

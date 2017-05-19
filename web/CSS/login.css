@@ -56,8 +56,21 @@ body::before {
 
 #but {
     position: absolute;
-    right:10px;
-    top:5px;
+    right:1px;
+    bottom:1px;
+    height: 35px;
     background-color: #a1887f ;
+    opacity: 50;
+}
+#submitcontainer{
+    position: relative;
+}
+#signup {
+    font-size: large;
+    font-weight: bold;
+    position: fixed;
+    top:5px;
+    left:5px;
+    color: #bf360c;
 }
 
