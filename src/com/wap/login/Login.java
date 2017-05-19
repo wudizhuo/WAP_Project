@@ -18,7 +18,7 @@ public class Login extends HttpServlet {
             String name = request.getParameter("username");
             String password = request.getParameter("password");
             if (validateUser(name, password)) {
-                out.println("<h1>Welcome </h1>" + name);
+                response.sendRedirect("DashBoard.jsp");
             } else {
                 out.println("Login Failure");
             }
