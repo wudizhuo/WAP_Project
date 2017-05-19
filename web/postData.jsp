@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<form  id="post_page" action="/post" method="post">
+<form  id="post_page" action="/post">
     <p>please post your page.</p>
 </form>
 

@@ -26,11 +26,11 @@
     </welcome-file-list>
 
     <servlet>
-        <servlet-name>post_page</servlet-name>
-        <servlet-class>com.wap.post.Post</servlet-class>
+        <servlet-name>post</servlet-name>
+        <servlet-class>com.wap.post.PostSerlvet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>post_page</servlet-name>
+        <servlet-name>post</servlet-name>
         <url-pattern>/post</url-pattern>
     </servlet-mapping>
 </web-app>
