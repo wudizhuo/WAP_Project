@@ -3,6 +3,7 @@ package com.wap.post;
 import com.wap.common.BaseRepository;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.Query;
+
 /**
  * Created by hongleyou on 2017/5/18.
  */
@@ -13,9 +14,5 @@ public class PostDataRepository extends BaseRepository {
 
     public Query<PostData>  getPostData() {
         return datastore.createQuery(PostData.class);
-    }
-
-    public void getPictureFromID(String id) {
-
     }
 }

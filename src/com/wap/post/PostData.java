@@ -13,6 +13,7 @@ import java.util.List;
 
 @Entity("post_data")
 public class PostData extends BaseModel{
+    private String _id;
     private String name;
     private String content;
     private String image;
@@ -23,13 +24,18 @@ public class PostData extends BaseModel{
     public PostData() {
     }
 
-    public PostData(String name, String content, String image, List<Comment> comments, Location location, int like) {
+    public PostData(String _id, String name, String content, String image, List<Comment> comments, Location location, int like) {
+        this._id = _id;
         this.name = name;
         this.content = content;
         this.image = image;
         this.comments = comments;
         this.location = location;
         this.like = like;
+    }
+
+    public String get_id() {
+        return _id;
     }
 
     public String getName() {

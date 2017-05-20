@@ -26,18 +26,25 @@ public class PostSerlvet extends HttpServlet {
         postDatas = new PostDataRepository((Datastore) this.getServletContext().getAttribute("DATA_STORE")).getPostData();
         List<PostData> objs = postDatas.asList();
         PostData obj = objs.get(0);
-        out.println(obj.getName());
-        out.println(obj.getContent());
-        out.println(obj.getLike());
-        out.println(obj.getLocation().getLatitude());
-        out.println(obj.getLocation().getLongitude());
-        out.println(obj.getImage());
-        for(Comment comment : obj.getComments()) {
-            out.println(comment.getName());
-            out.println(comment.getComment());
-        }
 
-        //request.getRequestDispatcher("postData.jsp").forward(request, response);
+//        out.println(obj.get_id());
+//        out.println(obj.getName());
+//        out.println(obj.getContent());
+//        out.println(obj.getLike());
+//        out.println(obj.getLocation().getLatitude());
+//        out.println(obj.getLocation().getLongitude());
+//        out.println(obj.getImage());
+//        for(Comment comment : obj.getComments()) {
+//            out.println(comment.getName());
+//            out.println(comment.getComment());
+//        }
+        request.setAttribute("name", obj.getName());
+        request.setAttribute("content", obj.getContent());
+        request.setAttribute("like", obj.getLike());
+        System.out.println(obj.getImage());
+        request.setAttribute("image", obj.getImage());
+        request.setAttribute("comments", obj.getComments());
+        request.getRequestDispatcher("postData.jsp").forward(request, response);
     }
 
 }
