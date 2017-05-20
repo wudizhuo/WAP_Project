@@ -19,8 +19,8 @@ public class PostDataTest {
         final Datastore datastore = morphia.createDatastore(mongo, "wap");
         datastore.ensureIndexes();
 
-        Query<PostData> postData = new PostDataRepository(datastore).getPostData();
-        List<PostData> objs = postData.asList();
-        System.out.println("----" + objs.toString());
+        List<PostData> postData = new PostDataRepository(datastore).getPostData();
+        //List<PostData> objs = postData.asList();
+        System.out.println("----" + postData.toString());
     }
 }

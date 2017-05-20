@@ -15,14 +15,16 @@
 <body>
 
 <form  id="post_page" action="/post">
-    <p>"${name}"</p>
-    <p>"${content}"</p>
-    <p>"${like}"</p>
-    <p><img id = "image" src="${image}" alt="image"/></p>
+    <c:forEach items = "${UserPosts}" var="UserPost">
+        <p>"${UserPost.getName()}"</p>
+        <p>"${UserPost.getContent()}"</p>
+        <p>"${UserPost.getLike()}"</p>
+        <p><img id = "image" src="${UserPost.getImage()}" alt="image"/></p>
 
-    <c:forEach items="${comments}" var="Comment">
-        <p>${Comment.name}</p>
-        <p>${Comment.comment}</p>
+        <%--<c:forEach items="${comments}" var="Comment">--%>
+            <%--<p>${Comment.name}</p>--%>
+            <%--<p>${Comment.comment}</p>--%>
+        <%--</c:forEach>--%>
     </c:forEach>
 </form>
 

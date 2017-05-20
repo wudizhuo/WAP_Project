@@ -1,0 +1,24 @@
+{
+  "name": "Leyou Hong",
+  "content": "I studied in ningbo 3years ago.",
+  "image" : "../images/ningbo.jpg",
+  "comments": [
+    {
+      "name": "Yangyang Li",
+      "comment": "I love ningbo."
+    },
+    {
+      "name": "Zhuo Sun",
+      "comment": "I like traveling in ningbo."
+    },
+    {
+      "name": "Ha",
+      "comment": "I want to travel in ningbo."
+    }
+  ],
+  "location": {
+    "longitude": "29.8697063",
+    "latitude": "121.4318737"
+  },
+  "like": 0
+}
