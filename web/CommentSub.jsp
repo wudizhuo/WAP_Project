@@ -10,8 +10,6 @@
 <html>
 <head>
     <title>SubComments</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/AddComments.js"></script>
 
 </head>
 <body>
@@ -28,7 +26,7 @@
 <div>
    <P style="font-style: italic" > NickName: <input id="nkName" type="text" name="nikeName"></P>
     <textarea id="comArea" name="comtcontent" rows="6" cols="65"></textarea>
-    <button id="addComs">Add</button>
+    <button id="addComs" type="button" myAttr="${UserPost._id}"> Add</button>
 </div>
 <hr/>
 </body>

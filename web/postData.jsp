@@ -7,11 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <title>Post Page</title>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript"src="map.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/AddComments.js"></script>
+
     <!--link href="../CSS/login.css" type="text/css" rel="stylesheet"/-->
 </head>
 <body>
@@ -26,8 +30,8 @@
         <input type="hidden" name="longitude" value="${UserPost.getLocation().getLongitude()}">
         <input type="hidden" name="latitude" value="${UserPost.getLocation().getLatitude()}">
         <p><button type="submit">Get localtion</button></p>
-        <%@include file="CommentSub.jsp"%>
     </form>
+        <%@include file="CommentSub.jsp"%>
     </c:forEach>
 
 </body>
