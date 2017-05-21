@@ -23,7 +23,7 @@
     <form  id="post_page" method="post" action="map.jsp">
         <p>"${UserPost.getName()}"</p>
         <p>"${UserPost.getContent()}"</p>
-        <p>"${UserPost.getLike()}"</p>
+        <p>"${UserPost.getLike()}" <button id="addLike" type="button" myAttr="${UserPost._id}">Like</button> </p>
         <p><img id = "image" src="${UserPost.getImage()}" alt="image"/></p>
         <input type="hidden" name="longitude" value="${UserPost.getLocation().getLongitude()}">
         <input type="hidden" name="latitude" value="${UserPost.getLocation().getLatitude()}">
