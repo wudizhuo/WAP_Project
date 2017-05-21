@@ -7,8 +7,7 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript"src="map.js"></script>
 </head>
-<!--body onload="getCurrentLocation()"-->
-<body onload="getSpecifiedLocation(41.0132724,-91.9591159)">
+<body onload="getSpecifiedLocation(<%= request.getParameter("longitude")%>,<%= request.getParameter("latitude")%>)">
 <div id="map" style="width: 800px; height: 600px"></div>
 </body>
 </html>

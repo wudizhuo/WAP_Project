@@ -16,19 +16,18 @@
 </head>
 <body>
 
-<form  id="post_page" action="/post">
+
     <c:forEach items = "${UserPosts}" var="UserPost">
+    <form  id="post_page" method="post" action="map.jsp">
         <p>"${UserPost.getName()}"</p>
         <p>"${UserPost.getContent()}"</p>
         <p>"${UserPost.getLike()}"</p>
         <p><img id = "image" src="${UserPost.getImage()}" alt="image"/></p>
-        <%--<p><a href="getSpecifiedLocation()"></a></p>--%>
-        <%--<c:forEach items="${comments}" var="Comment">--%>
-            <%--<p>${Comment.name}</p>--%>
-            <%--<p>${Comment.comment}</p>--%>
-        <%--</c:forEach>--%>
+        <input type="hidden" name="longitude" value="${UserPost.getLocation().getLongitude()}">
+        <input type="hidden" name="latitude" value="${UserPost.getLocation().getLatitude()}">
+        <p><button type="submit">Get localtion</button></p>
+    </form>
     </c:forEach>
-</form>
 
 </body>
 </html>

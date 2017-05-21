@@ -10,7 +10,7 @@ function getCurrentLocation() {
                 //you can use latitude and longitude to set position yourself.
                 var latlng = new google.maps.LatLng(coords.latitude, coords.longitude);
                 var myOptions = {
-                    zoom: 18,    //the number controls the magnification.
+                    zoom: 5,    //the number controls the magnification.
                     center: latlng,  //Set the map center by using specify the coordinates of the point.
                     mapTypeId: google.maps.MapTypeId.ROADMAP //Set the map type.
                 };
@@ -54,7 +54,7 @@ function getSpecifiedLocation(latitude, longitude) {
 
     var map = new google.maps.Map(document.getElementById('map'), {
         center: latlng,
-        zoom: 18
+        zoom: 12
     });
 
     var marker = new google.maps.Marker({
