@@ -26,6 +26,7 @@
         <input type="hidden" name="longitude" value="${UserPost.getLocation().getLongitude()}">
         <input type="hidden" name="latitude" value="${UserPost.getLocation().getLatitude()}">
         <p><button type="submit">Get localtion</button></p>
+        <%@include file="CommentSub.jsp"%>
     </form>
     </c:forEach>
 

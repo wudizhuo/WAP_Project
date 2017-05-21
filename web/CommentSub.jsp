@@ -11,16 +11,25 @@
 <head>
     <title>SubComments</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="AddComments.js"></script>
+    <script type="text/javascript" src="./js/AddComments.js"></script>
 
 </head>
 <body>
 
-<div class="comments">Test</div>
-</hr>
-
-<textarea id="comArea" name="comtcontent" rows="10" cols="30">
-</textarea>
-<button id="addComs">Add</button>
+<div class="comments">
+    <c:forEach var = "Post_comments" items = "${UserPost.comments}">
+        <p>${Post_comments.name} </p>
+        <p>${Post_comments.comment}</p>
+    </c:forEach>
+</div>
+<div class="cmtname"></div>
+<br/>
+<div class="cmtcontext"></div>
+<div>
+   <P style="font-style: italic" > NickName: <input id="nkName" type="text" name="nikeName"></P>
+    <textarea id="comArea" name="comtcontent" rows="6" cols="65"></textarea>
+    <button id="addComs">Add</button>
+</div>
+<hr/>
 </body>
 </html>
