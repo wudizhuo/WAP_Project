@@ -1,6 +1,7 @@
 package com.wap.post;
 
 import com.mongodb.MongoClient;
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 import org.mongodb.morphia.query.Query;
@@ -19,8 +20,10 @@ public class PostDataTest {
         final Datastore datastore = morphia.createDatastore(mongo, "wap");
         datastore.ensureIndexes();
 
-        List<PostData> postData = new PostDataRepository(datastore).getPostData();
+        String id = "5920ecc25065e62d6f423554";
+        ObjectId objectId = new ObjectId(id);
+//        PostData post = new PostDataRepository(datastore).getPost(objectId);
         //List<PostData> objs = postData.asList();
-        System.out.println("----" + postData.toString());
+//        System.out.println("----" + post.toString());
     }
 }

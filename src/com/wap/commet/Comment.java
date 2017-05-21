@@ -1,12 +1,9 @@
-package com.wap.post;
+package com.wap.commet;
 
+import com.wap.common.BaseModel;
 import org.mongodb.morphia.annotations.Entity;
 
-/**
- * Created by hongleyou on 2017/5/18.
- */
-
-public class Comment {
+public class Comment extends BaseModel {
     private String name;
     private String comment;
 
