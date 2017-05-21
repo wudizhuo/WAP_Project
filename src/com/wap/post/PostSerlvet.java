@@ -27,8 +27,6 @@ public class PostSerlvet extends HttpServlet {
 
         request.setAttribute("UserPosts", postDatas);
 
-        //PostData obj = objs.get(0);
-
 //        request.setAttribute("name", obj.getName());
 //        request.setAttribute("content", obj.getContent());
 //        request.setAttribute("like", obj.getLike());
