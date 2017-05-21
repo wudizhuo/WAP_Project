@@ -23,7 +23,6 @@
 <br/>
 <div class="cmtcontext"></div>
 <div>
-   <P style="font-style: italic" > NickName: <input id="nkName" type="text" name="nikeName"></P>
     <textarea id="comArea" name="comtcontent" rows="6" cols="65"></textarea>
     <button id="addComs" type="button" myAttr="${UserPost._id}"> Add</button>
 </div>

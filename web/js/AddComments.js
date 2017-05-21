@@ -16,20 +16,25 @@ function addComments(event) {
     };
     $.ajax({
         url: 'ComtServlet',
-        type: 'post',
+        type: 'POST',
         dataType: 'text json',
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(jsonStr),
-        success: callback,
-        error: callback,
+        success: function (data) {
+            callback(data);
+        },
+        error: function (data) {
+            callback(data);
+        }
     });
 
     var callback = function (data) {
         if (data.status == 200) {
-            $(".cmtname").text(comtname);
+            alert("*******test**********"+comt);
+            $(".cmtname").text("##i am user name##");
             $(".cmtcontext").text(comt);
         } else {
-            alert("Fail");
+            alert("fail");
         }
     };
 }
