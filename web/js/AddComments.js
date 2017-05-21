@@ -30,9 +30,7 @@ function addComments(event) {
 
     var callback = function (data) {
         if (data.status == 200) {
-            alert("*******test**********"+comt);
-            $(".cmtname").text("##i am user name##");
-            $(".cmtcontext").text(comt);
+            location.reload();
         } else {
             alert("fail");
         }
