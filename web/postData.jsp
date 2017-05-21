@@ -10,6 +10,8 @@
 <html>
 <head>
     <title>Post Page</title>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript"src="map.js"></script>
     <!--link href="../CSS/login.css" type="text/css" rel="stylesheet"/-->
 </head>
 <body>
@@ -20,7 +22,7 @@
         <p>"${UserPost.getContent()}"</p>
         <p>"${UserPost.getLike()}"</p>
         <p><img id = "image" src="${UserPost.getImage()}" alt="image"/></p>
-
+        <%--<p><a href="getSpecifiedLocation()"></a></p>--%>
         <%--<c:forEach items="${comments}" var="Comment">--%>
             <%--<p>${Comment.name}</p>--%>
             <%--<p>${Comment.comment}</p>--%>
