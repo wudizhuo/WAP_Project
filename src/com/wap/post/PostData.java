@@ -2,6 +2,7 @@ package com.wap.post;
 
 import com.wap.commet.Comment;
 import com.wap.common.BaseModel;
+import lombok.Data;
 import org.mongodb.morphia.annotations.Entity;
 
 import java.util.List;
