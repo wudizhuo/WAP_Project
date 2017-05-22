@@ -66,4 +66,8 @@ public class PostData extends BaseModel{
     public int getLike() {
         return like;
     }
+
+    public void setLike(int like) {
+        this.like = like;
+    }
 }

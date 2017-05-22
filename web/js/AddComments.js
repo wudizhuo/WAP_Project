@@ -15,7 +15,7 @@ function addComments(event) {
         "content": comt,
     };
     $.ajax({
-        url: 'ComtServlet',
+        url: 'LikeServlet',
         type: 'POST',
         dataType: 'text json',
         contentType: 'application/json; charset=utf-8',
