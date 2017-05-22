@@ -22,7 +22,7 @@ public class Login extends HttpServlet {
             request.getSession().setAttribute("User", user);
             response.sendRedirect("DashBoard.jsp");
         } else {
-            out.println("Login Failure");
+            response.sendRedirect("LoginFail.html");
         }
     }
 
