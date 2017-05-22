@@ -36,13 +36,4 @@
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
-
-    <servlet>
-        <servlet-name>post</servlet-name>
-        <servlet-class>com.wap.post.PostServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>post</servlet-name>
-        <url-pattern>/post</url-pattern>
-    </servlet-mapping>
 </web-app>
