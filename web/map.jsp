@@ -6,8 +6,9 @@
     <title>Get google map position.</title>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript"src="js/map.js"></script>
+    <link href="../CSS/map.css" type="text/css" rel="stylesheet"/>
 </head>
 <body onload="getSpecifiedLocation(<%= request.getParameter("longitude")%>,<%= request.getParameter("latitude")%>)">
-<div id="map" style="width: 800px; height: 600px"></div>
+<div id="map"></div>
 </body>
 </html>
