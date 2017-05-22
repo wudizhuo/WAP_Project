@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet("/PostMoreServlet")
@@ -47,9 +46,9 @@ public class PostMoreServlet extends HttpServlet {
         userPosts.add(postData);
         //System.out.println(userPosts.size());
         this.getServletContext().setAttribute("UserPosts", userPosts);
+        response.setStatus(HttpServletResponse.SC_OK);
         request.getRequestDispatcher("postData.jsp").forward(request, response);
         //request.setAttribute("postData", postData);
-//        response.setStatus(HttpServletResponse.SC_OK);
         //response.getWriter().println("success");
 
     }

@@ -1,31 +1,39 @@
-/**
- * Created by hongleyou on 5/21/17.
- */
 var num = 1;
-var flag = true;
+var isLoading = false;
 $(function () {
-    $(window).scroll(function () {
-        event.preventDefault();
-        if ($(window).scrollTop() >= $(document).height() * 0.9 && flag == true) {
-            addPostDatas(num++);
-            flag = false;
-        }
-    });
+  $("#post_data").scroll(function () {
+    if (($(this).scrollTop() + $(this).height() == $(this)[0].scrollHeight) && !isLoading) {
+      isLoading = true;
+      addPostDatas(num++);
+    }
+  });
 });
 
 function addPostDatas(num) {
-    $.ajax({
-        url: 'PostMoreServlet',
-        type: 'POST',
-        data: {data:num},
-        success: function (data) {
-            console.log("------");
-            console.log(data);
-            $("#post_data").hide().fadeIn('fast');
-            //console.log(data);
-            // location.reload();
-            flag = true;
-        }
-    });
+  console.log("---addPostDatas---");
+  $.ajax({
+    url: 'PostMoreServlet',
+    type: 'POST',
+    data: {data: num},
+    success: function (data) {
+      callback(data);
+    },
+    error: function (data) {
+      callback(data);
+    }
+  });
+
+  var callback = function (data) {
+    isLoading = false;
+    if (data.status === 200) {
+      console.log("------");
+      console.log(data);
+      $("#post_data").hide().fadeIn('fast');
+      //console.log(data);
+      // location.reload();
+    } else {
+      alert("fail");
+    }
+  };
 }
 

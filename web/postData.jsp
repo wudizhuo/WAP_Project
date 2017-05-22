@@ -31,7 +31,7 @@
 <% List<PostData> postDatas = new PostDataRepository((Datastore) application.getAttribute("DATA_STORE")).getPostData();
     request.setAttribute("UserPosts", postDatas);
 %>
-<div id="post_data">
+<div id="post_data" style="overflow: scroll; height: 100%;">
     <c:forEach items="${UserPosts}" var="UserPost">
         <form id="post_page" method="post" action="map.jsp">
             <p>"${UserPost.getName()}"</p>
