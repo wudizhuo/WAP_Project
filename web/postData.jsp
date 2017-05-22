@@ -17,7 +17,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script src="js/scroll.js"></script>
-    <!--link href="../CSS/login.css" type="text/css" rel="stylesheet"/-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link href="../CSS/postData.css" type="text/css" rel="stylesheet"/>
+
 </head>
 <body>
 <% List<PostData> postDatas = new PostDataRepository((Datastore) application.getAttribute("DATA_STORE")).getPostData();
@@ -35,7 +39,7 @@
             <input type="hidden" name="longitude" value="${UserPost.getLocation().getLongitude()}">
             <input type="hidden" name="latitude" value="${UserPost.getLocation().getLatitude()}">
             <p>
-                <button type="submit">Get localtion</button>
+                <button id = "getLocation"type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Get localtion</button>
             </p>
         </form>
         <%@include file="CommentSub.jsp" %>

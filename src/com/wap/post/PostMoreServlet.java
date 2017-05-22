@@ -45,6 +45,7 @@ public class PostMoreServlet extends HttpServlet {
 
         List<PostData> userPosts = (List<PostData>) this.getServletContext().getAttribute("UserPosts");
         userPosts.add(postData);
+        //System.out.println(userPosts.size());
         this.getServletContext().setAttribute("UserPosts", userPosts);
         request.getRequestDispatcher("postData.jsp").forward(request, response);
         //request.setAttribute("postData", postData);
