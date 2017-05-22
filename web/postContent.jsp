@@ -4,6 +4,7 @@
         <p>"${UserPost.getContent()}"</p>
         <p>"${UserPost.getLike()}"
             <button id="addLike" type="button" myAttr="${UserPost._id}">Like</button>
+            <button class="deleteLike" type="button" myAttr="${UserPost._id}">Delete</button>
         </p>
             <%--<p><img id="image" src="${UserPost.getImage()}" alt="image"/></p>--%>
         <input type="hidden" name="longitude" value="${UserPost.getLocation().getLongitude()}">

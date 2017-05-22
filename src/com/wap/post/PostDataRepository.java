@@ -7,9 +7,6 @@ import org.mongodb.morphia.query.FindOptions;
 
 import java.util.List;
 
-/**
- * Created by hongleyou on 2017/5/18.
- */
 public class PostDataRepository extends BaseRepository {
     public PostDataRepository(Datastore datastore) {
         super(datastore);
@@ -25,12 +22,10 @@ public class PostDataRepository extends BaseRepository {
 
     public List<PostData> getMorePostData(int now, int more) {
         return datastore.createQuery(PostData.class).order("-_id").asList(new FindOptions().skip(now).limit(more));
-    public List<PostData> getAllPostData() {
-        return datastore.createQuery(PostData.class).order("-_id").asList(new FindOptions());
     }
 
-    public PostData getMorePostData(int n) {
-        return datastore.createQuery(PostData.class).order("-_id").asList().get(25+n);
+    public List<PostData> getAllPostData() {
+        return datastore.createQuery(PostData.class).order("-_id").asList(new FindOptions());
     }
 
     public PostData getPost(String Id) {
@@ -41,5 +36,7 @@ public class PostDataRepository extends BaseRepository {
         datastore.save(post);
     }
 
-    public void delete(PostData post) {datastore.delete(post);}
+    public void delete(PostData post) {
+        datastore.delete(post);
+    }
 }
