@@ -26,7 +26,7 @@
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
-            <%@ include file="postData.jsp" %>
+            <%@ include file="Posts.jsp" %>
         </div>
     </main>
 </div>

@@ -1,7 +1,7 @@
 var num = 1;
 var isLoading = false;
 $(function () {
-  $("#post_data").scroll(function () {
+  $(".post_data").scroll(function () {
     if (($(this).scrollTop() + $(this).height() == $(this)[0].scrollHeight) && !isLoading) {
       isLoading = true;
       addPostDatas(num++);
@@ -10,8 +10,6 @@ $(function () {
 });
 
 function addPostDatas(num) {
-  console.log("---addPostDatas---");
-
   var jsonStr = {
     more: num
   };
@@ -35,9 +33,10 @@ function addPostDatas(num) {
     console.log("------");
     console.log(data);
     if (data.status === 200) {
-      $("#post_data").hide().fadeIn('fast');
-      //console.log(data);
-      // location.reload();
+      $.get("postContent.jsp", function (data) {
+        console.log(data);
+        $(".post_data").append(data);
+      });
     } else {
       alert("fail");
     }

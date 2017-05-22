@@ -28,6 +28,7 @@ public class PostMoreServlet extends HttpServlet {
         int length = (int) data_store.getlength();
 
         String json = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+        System.out.println("-----" + json);
         int more = new Gson().fromJson(json, GetMoreJson.class).more;
 
         if (userPosts.size() == length) {

@@ -32,6 +32,8 @@
     application.setAttribute("UserPosts", posts);
     pageContext.setAttribute("posts", posts);
 %>
-<%@include file="postContent.jsp" %>
+<div class="post_data" style="overflow: scroll; height: 100%;">
+    <%@include file="postContent.jsp" %>
+</div>
 </body>
 </html>
