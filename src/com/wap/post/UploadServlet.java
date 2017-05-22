@@ -40,9 +40,12 @@ public class UploadServlet extends HttpServlet {
         PostData post = new PostData();
         post.setTitle(map.getParameter("post_title"));
         post.setContent(map.getParameter("post_content"));
-        File file = map.getFile("file");
-        System.out.println("File: " + file);
-        //post.setContent("fake content");
+
+        post.setImages(map.getFileNames("file"));
+        System.out.println(map.getParameterValues("post_longitude"));
+
+
+
         post.setName("fake name");
 
         new PostDataRepository((Datastore) this.getServletContext()

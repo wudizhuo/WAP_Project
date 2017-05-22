@@ -26,11 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
 import javax.servlet.MultipartConfigElement;
@@ -77,6 +73,7 @@ public class MultipartMap extends HashMap<String, Object> {
     private String encoding;
     private String location;
     private boolean multipartConfigured;
+    private List<String> fileNames = new ArrayList<String>();
 
     // Constructors -------------------------------------------------------------------------------
 
@@ -127,9 +124,10 @@ public class MultipartMap extends HashMap<String, Object> {
         this.location = location;
         this.multipartConfigured = multipartConfigured;
 
-        for (Part part : multipartRequest.getParts()) {
-            String filename = getFilename(part);
-            if (filename == null) {
+        //HaTC add new code
+            for (Part part : multipartRequest.getParts()) {
+                String filename = getFilename(part);
+                if (filename == null) {
                 processTextPart(part);
             } else if (!filename.isEmpty()) {
                 processFilePart(part, filename);
@@ -171,6 +169,13 @@ public class MultipartMap extends HashMap<String, Object> {
             return new String[] { ((File) value).getName() };
         }
         return (String[]) value;
+    }
+
+    /**
+     * @see ServletRequest#getFileNames(String)
+     */
+    public List<String> getFileNames(String name) {
+        return this.fileNames;
     }
 
     /**
@@ -296,6 +301,8 @@ public class MultipartMap extends HashMap<String, Object> {
         }
 
         put(part.getName(), file);
+        /* HaTC add new code */
+        fileNames.add(file.getName());
         part.delete(); // Cleanup temporary storage.
     }
 

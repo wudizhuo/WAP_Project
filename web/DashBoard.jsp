@@ -19,7 +19,7 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">WAP Project</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="">Create</a>
+            <a class="mdl-navigation__link" href="./createPost.jsp">Create</a>
             <a class="mdl-navigation__link" href="">Weather</a>
             <a class="mdl-navigation__link" href="">User Profile</a>
         </nav>

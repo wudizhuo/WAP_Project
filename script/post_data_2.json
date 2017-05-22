@@ -1,7 +1,11 @@
 {
   "name": "Leyou Hong",
   "content": "I love Hangzhou.",
-  "image" : "../images/hangzhou.jpg",
+  "images": [
+
+      "../images/hangzhou.jpg",
+      "../images/ningbo.jpg"
+  ],
   "comments": [
     {
       "name": "Yangyang Li",

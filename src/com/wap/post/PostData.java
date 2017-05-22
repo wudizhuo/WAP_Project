@@ -18,7 +18,7 @@ public class PostData extends BaseModel{
     private String name;
     private String title;
     private String content;
-    private String image;
+    private List<String> images;
     private List<Comment> comments;
     private Location location;
     private int like;
@@ -26,12 +26,12 @@ public class PostData extends BaseModel{
     public PostData() {
     }
 
-    public PostData(String _id, String name, String title, String content, String image, List<Comment> comments, Location location, int like) {
+    public PostData(String _id, String name, String title, String content, List<String> images, List<Comment> comments, Location location, int like) {
         this._id = _id;
         this.name = name;
         this.title = title;
         this.content = content;
-        this.image = image;
+        this.images = images;
         this.comments = comments;
         this.location = location;
         this.like = like;
@@ -50,9 +50,8 @@ public class PostData extends BaseModel{
         return content;
     }
 
-
-    public String getImage() {
-        return image;
+    public List<String> getImages() {
+        return images;
     }
 
     public List<Comment> getComments() {
