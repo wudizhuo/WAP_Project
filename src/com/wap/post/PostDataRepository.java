@@ -15,7 +15,7 @@ public class PostDataRepository extends BaseRepository {
         super(datastore);
     }
 
-    public List<PostData> getPostData() {
+    public List<PostData> getPost() {
         return datastore.createQuery(PostData.class).order("-_id").asList(new FindOptions().limit(25));
     }
 
