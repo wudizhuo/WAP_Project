@@ -19,6 +19,7 @@
     <script src="js/scroll.js"></script>
     <script type="text/javascript"src="AddComments.js"></script>
     <script type="text/javascript"src="AddLike.js"></script>
+    <script type="text/javascript"src="DeletePost.js"></script>
     <!--link href="../CSS/login.css" type="text/css" rel="stylesheet"/-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -37,6 +38,7 @@
             <p>"${UserPost.getContent()}"</p>
             <p>"${UserPost.getLike()}"
                 <button class="addLike" type="button" myAttr="${UserPost._id}">Like</button>
+                <button class="deleteLike" type="button" myAttr="${UserPost._id}">Delete</button>
             </p>
             <p><img id="image" src="${UserPost.getImage()}" alt="image"/></p>
             <input type="hidden" name="longitude" value="${UserPost.getLocation().getLongitude()}">

@@ -2,17 +2,16 @@
  * Created by yangyangli on 5/21/17.
  */
 $(function () {
-    $(".addLike").click(addLike);
+    $(".deleteLike").click(deleteLike);
 });
-function addLike() {
+function deleteLike() {
 var myPostId = $(this).attr("myAttr");
-alert(myPostId);
+alert(myPostId+"INTO TOE JS FOR AJAX");
 var jsonStrLike = {
         "postId": myPostId,
     };
-
     $.ajax({
-        url: 'LikeServlet',
+        url: 'DeletePostServlet',
         type: 'POST',
         dataType: 'text json',
         contentType: 'application/json; charset=utf-8',

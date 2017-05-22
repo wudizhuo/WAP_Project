@@ -21,6 +21,10 @@ public class PostDataRepository extends BaseRepository {
         return datastore.createQuery(PostData.class).order("-_id").asList(new FindOptions().limit(25));
     }
 
+    public List<PostData> getAllPostData() {
+        return datastore.createQuery(PostData.class).order("-_id").asList(new FindOptions());
+    }
+
     public PostData getMorePostData(int n) {
         return datastore.createQuery(PostData.class).order("-_id").asList().get(25+n);
     }
@@ -32,4 +36,6 @@ public class PostDataRepository extends BaseRepository {
     public void save(PostData post) {
         datastore.save(post);
     }
+
+    public void delete(PostData post) {datastore.delete(post);}
 }
