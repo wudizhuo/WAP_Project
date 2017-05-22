@@ -39,7 +39,7 @@
 
     <servlet>
         <servlet-name>post</servlet-name>
-        <servlet-class>com.wap.post.PostSerlvet</servlet-class>
+        <servlet-class>com.wap.post.PostServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>post</servlet-name>

@@ -1,30 +1,31 @@
+/**
+ * Created by hongleyou on 5/21/17.
+ */
+var num = 1;
+var flag = true;
 $(function () {
     $(window).scroll(function () {
-        if ($(window).scrollTop() >= $(document).height() * 0.9) {
-            console.log("------");
+        event.preventDefault();
+        if ($(window).scrollTop() >= $(document).height() * 0.9 && flag == true) {
+            addPostDatas(num++);
+            flag = false;
         }
     });
 });
 
+function addPostDatas(num) {
+    $.ajax({
+        url: 'PostMoreServlet',
+        type: 'POST',
+        data: {data:num},
+        success: function (data) {
+            console.log("------");
+            console.log(data);
+            $("#post_data").hide().fadeIn('fast');
+            //console.log(data);
+            // location.reload();
+            flag = true;
+        }
+    });
+}
 
-// function ajaxRead() {
-    //     // var html="";
-    //     //$("my_list_li1").value = "ajaxRead";
-    //     $.ajax({
-    //         // type:'get',
-    //         // dataType:'jsonp',
-    //         // url:'http://api.flickr.com/services/feeds/photos_public.gne?tags=car&tagmode=any&format=json&jsoncallback=?',
-    //         beforeSend:function(){console.log('loading...')},
-    //         success:function(data){
-    //             // $.each(data.items,function(i,item){
-    //             //     html+='<div class="box">';
-    //             //     html+='<h1>'+item.title+'</h1>';
-    //             //     html+='<a hreft="'+item.link+'"><img src="'+item.media.m+'"/></a>'
-    //             //     html+='<div>'+item.tags+'</div>';
-    //             //     html+='</div>';
-    //             // });
-    //         // $("#resText").append($(html));
-    //         },
-    //         complete:function(){console.log('mission acomplete.')}
-    //     });
-    // }

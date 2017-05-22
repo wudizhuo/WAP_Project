@@ -1,7 +1,6 @@
 package com.wap.post;
 
 import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.query.Query;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class PostSerlvet extends HttpServlet {
+public class PostServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private List<PostData> postDatas;
 
@@ -25,7 +24,7 @@ public class PostSerlvet extends HttpServlet {
 
         postDatas = new PostDataRepository((Datastore) this.getServletContext().getAttribute("DATA_STORE")).getPostData();
 
-        request.setAttribute("UserPosts", postDatas);
+        this.getServletContext().setAttribute("UserPosts", postDatas);
 
 //        request.setAttribute("name", obj.getName());
 //        request.setAttribute("content", obj.getContent());

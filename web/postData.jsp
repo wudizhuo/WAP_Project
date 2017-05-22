@@ -19,7 +19,7 @@
 <body>
 
 <div id = "post_data">
-    <c:forEach items = "${UserPosts}" var="UserPost">
+    <c:forEach items = "${applicationScope['UserPosts']}" var="UserPost">
     <form  id="post_page" method="post" action="map.jsp">
         <p>"${UserPost.getName()}"</p>
         <p>"${UserPost.getContent()}"</p>
@@ -31,6 +31,8 @@
     </form>
         <%@include file="CommentSub.jsp"%>
     </c:forEach>
+
+
 </div>
 
 </body>
