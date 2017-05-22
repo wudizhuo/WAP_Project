@@ -9,11 +9,13 @@ import java.util.List;
 
 /**
  * Created by hongleyou on 2017/5/18.
+ * Updated by caoha
  */
 
 @Entity("post_data")
 @Data
 public class PostData extends BaseModel{
+    public static final String fileSavePath = "C:/uploads/";
     private String _id;
     private String name;
     private String title;

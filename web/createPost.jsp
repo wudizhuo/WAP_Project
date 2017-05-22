@@ -50,33 +50,37 @@
                 </div>
             <input type="file" id="file" name="file" accept="image/*"  multiple="muliple" required/>
             <c:if test="${not empty parts.file}"> Files successfully uploaded!</c:if>
-            <br>
-            <input type="submit"/>
-            <br><br> ${requestScope.message}
+
+
+            <div>
+                <input id="post_longitude" name="post_longitude" type="hidden" data-length="10">
+                <input id="post_latitude" name="post_latitude" type="hidden" data-length="10">
+            </div>
+            <script>
+                var y = document.getElementById("post_longitude");
+                var x = document.getElementById("post_latitude");
+
+                navigator.geolocation.getCurrentPosition(success, fail);
+
+                function success(position) {
+                    y.value = position.coords.longitude;
+                    x.value = position.coords.latitude;
+                }
+
+                function fail(msg) {
+                    console.log(msg.code + msg.message); // TODO: Change to use information from User
+                }
+
+            </script>
+
+                <br>
+                <input type="submit"/>
+                <br><br> ${requestScope.message}
         </form>
 
     </div>
 
-    <div>
-        <input id="post_longitude" name="post_longitude" type="text" data-length="10">
-        <input id="post_latitude" name="post_latitude" type="text" data-length="10">
-    </div>
-    <script>
-        var y = document.getElementById("post_longitude");
-        var x = document.getElementById("post_latitude");
 
-        navigator.geolocation.getCurrentPosition(success, fail);
-
-        function success(position) {
-            y.value = 'Longitude:' + position.coords.longitude;
-            x.value = 'Latitude:' + position.coords.latitude;
-        }
-
-        function fail(msg) {
-            console.log(msg.code + msg.message); // TODO: Change to use information from User
-        }
-
-    </script>
 
 
     <div class="mdl-layout__drawer">
