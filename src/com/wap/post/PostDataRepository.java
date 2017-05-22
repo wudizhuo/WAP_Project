@@ -1,11 +1,9 @@
 package com.wap.post;
 
 import com.wap.common.BaseRepository;
-import com.wap.user.User;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.FindOptions;
-import org.mongodb.morphia.query.Query;
 
 import java.util.List;
 
@@ -21,6 +19,12 @@ public class PostDataRepository extends BaseRepository {
         return datastore.createQuery(PostData.class).order("-_id").asList(new FindOptions().limit(25));
     }
 
+    public long getlength() {
+        return datastore.getCount(PostData.class);
+    }
+
+    public List<PostData> getMorePostData(int now, int more) {
+        return datastore.createQuery(PostData.class).order("-_id").asList(new FindOptions().skip(now).limit(more));
     public List<PostData> getAllPostData() {
         return datastore.createQuery(PostData.class).order("-_id").asList(new FindOptions());
     }

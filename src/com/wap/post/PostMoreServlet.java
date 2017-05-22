@@ -1,11 +1,9 @@
 package com.wap.post;
 
-/**
- * Created by hongleyou on 2017/5/21.
- */
-
+import com.google.gson.Gson;
 import org.mongodb.morphia.Datastore;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,44 +11,40 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @WebServlet("/PostMoreServlet")
 public class PostMoreServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    private PostData postData;
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        PrintWriter out = response.getWriter();
-//
-//        postDatas = new PostDataRepository((Datastore) this.getServletContext().getAttribute("DATA_STORE")).getPostData();
-//
-//        request.setAttribute("UserPosts", postDatas);
-//
-////        request.setAttribute("name", obj.getName());
-////        request.setAttribute("content", obj.getContent());
-////        request.setAttribute("like", obj.getLike());
-////        //System.out.println(obj.getImage());
-////        request.setAttribute("image", obj.getImage());
-////        request.setAttribute("comments", obj.getComments());
-//        request.getRequestDispatcher("postData.jsp").forward(request, response);
-//
-        postData = new PostDataRepository((Datastore) this.getServletContext()
-                .getAttribute("DATA_STORE")).getMorePostData(Integer.valueOf(request.getParameter("data")));
-        System.out.println(postData.getContent());
+        ServletContext servletContext = this.getServletContext();
+        List<PostData> userPosts = (List<PostData>) servletContext.getAttribute("UserPosts");
 
-        List<PostData> userPosts = (List<PostData>) this.getServletContext().getAttribute("UserPosts");
-        userPosts.add(postData);
-        //System.out.println(userPosts.size());
-        this.getServletContext().setAttribute("UserPosts", userPosts);
+        PostDataRepository data_store = new PostDataRepository((Datastore) servletContext
+                .getAttribute("DATA_STORE"));
+        int length = (int) data_store.getlength();
+
+        String json = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+        int more = new Gson().fromJson(json, GetMoreJson.class).more;
+
+        if (userPosts.size() == length) {
+            //TODO
+            //have get all
+        }
+
+        if ((userPosts.size() + more) > length) {
+            more = length - userPosts.size();
+        }
+
+        userPosts.addAll(data_store.getMorePostData(userPosts.size(), more));
+        servletContext.setAttribute("UserPosts", userPosts);
+
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("UTF-8");
         response.setStatus(HttpServletResponse.SC_OK);
-        request.getRequestDispatcher("postData.jsp").forward(request, response);
-        //request.setAttribute("postData", postData);
-        //response.getWriter().println("success");
-
+        response.getWriter().println("success");
     }
-
 }

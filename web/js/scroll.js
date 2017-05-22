@@ -11,10 +11,17 @@ $(function () {
 
 function addPostDatas(num) {
   console.log("---addPostDatas---");
+
+  var jsonStr = {
+    more: num
+  };
+
   $.ajax({
+    dataType: 'text json',
+    contentType: 'application/json; charset=utf-8',
     url: 'PostMoreServlet',
     type: 'POST',
-    data: {data: num},
+    data: JSON.stringify(jsonStr),
     success: function (data) {
       callback(data);
     },
@@ -25,9 +32,9 @@ function addPostDatas(num) {
 
   var callback = function (data) {
     isLoading = false;
+    console.log("------");
+    console.log(data);
     if (data.status === 200) {
-      console.log("------");
-      console.log(data);
       $("#post_data").hide().fadeIn('fast');
       //console.log(data);
       // location.reload();

@@ -29,7 +29,7 @@
 </head>
 <body>
 <% List<PostData> postDatas = new PostDataRepository((Datastore) application.getAttribute("DATA_STORE")).getPostData();
-    request.setAttribute("UserPosts", postDatas);
+    application.setAttribute("UserPosts", postDatas);
 %>
 <div id="post_data" style="overflow: scroll; height: 100%;">
     <c:forEach items="${UserPosts}" var="UserPost">
