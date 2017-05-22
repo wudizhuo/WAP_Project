@@ -1,7 +1,11 @@
 <c:forEach items="${posts}" var="UserPost">
     <form id="post_page" method="post" action="map.jsp">
+        <p>"${UserPost.getImages().size()}"</p>
         <p>"${UserPost.getName()}"</p>
         <p>"${UserPost.getContent()}"</p>
+        <c:forEach items="${UserPost.getImages()}" var = "image">
+            <img id = "images" src="${image}" alt="image">
+        </c:forEach>
         <p>"${UserPost.getLike()}"
             <button id="addLike" type="button" myAttr="${UserPost._id}">Like</button>
             <button class="deleteLike" type="button" myAttr="${UserPost._id}">Delete</button>

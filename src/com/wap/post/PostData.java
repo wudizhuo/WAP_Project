@@ -15,7 +15,7 @@ import java.util.List;
 @Entity("post_data")
 @Data
 public class PostData extends BaseModel{
-    public static final String fileSavePath = "C:/uploads/";
+    public static final String fileSavePath = "./images/";
     private String _id;
     private String name;
     private String title;

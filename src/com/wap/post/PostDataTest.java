@@ -22,7 +22,9 @@ public class PostDataTest {
 
         String id = "5920ecc25065e62d6f423554";
         ObjectId objectId = new ObjectId(id);
-//        PostData post = new PostDataRepository(datastore).getPost(objectId);
+        List<PostData> posts = new PostDataRepository(datastore).getPostData();
+        for (PostData postData : posts)
+            System.out.println(postData.getImages() == null ? "null" : postData.getImages().size());
         //List<PostData> objs = postData.asList();
 //        System.out.println("----" + post.toString());
     }

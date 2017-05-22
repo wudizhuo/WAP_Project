@@ -1,7 +1,9 @@
 {
   "name": "Leyou Hong",
   "content": "I studied in ningbo 3years ago.",
-  "image" : "../images/ningbo.jpg",
+  "images" : [
+    "../images/hangzhou.jpg"
+  ],
   "comments": [
     {
       "name": "Yangyang Li",
