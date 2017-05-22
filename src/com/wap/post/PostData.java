@@ -11,9 +11,11 @@ import java.util.List;
  */
 
 @Entity("post_data")
+@Data
 public class PostData extends BaseModel{
     private String _id;
     private String name;
+    private String title;
     private String content;
     private String image;
     private List<Comment> comments;
@@ -23,9 +25,10 @@ public class PostData extends BaseModel{
     public PostData() {
     }
 
-    public PostData(String _id, String name, String content, String image, List<Comment> comments, Location location, int like) {
+    public PostData(String _id, String name, String title, String content, String image, List<Comment> comments, Location location, int like) {
         this._id = _id;
         this.name = name;
+        this.title = title;
         this.content = content;
         this.image = image;
         this.comments = comments;
@@ -41,9 +44,11 @@ public class PostData extends BaseModel{
         return name;
     }
 
+
     public String getContent() {
         return content;
     }
+
 
     public String getImage() {
         return image;

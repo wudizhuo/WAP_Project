@@ -1,0 +1,10 @@
+.content{
+    padding-top:5%;
+    padding-left:20%;
+}
+
+.mdl-layout__drawer-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
