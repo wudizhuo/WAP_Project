@@ -6,6 +6,14 @@
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="CSS/dashboard.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script src="js/scroll.js"></script>
+    <script type="text/javascript" src="AddComments.js"></script>
+    <script type="text/javascript" src="AddLike.js"></script>
+    <script type="text/javascript" src="DeletePost.js"></script>
+    <link href="CSS/postData.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <!-- Always shows a header, even in smaller screens. -->
