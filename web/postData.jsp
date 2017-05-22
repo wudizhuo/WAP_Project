@@ -17,6 +17,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script src="js/scroll.js"></script>
+    <script type="text/javascript"src="AddComments.js"></script>
+    <script type="text/javascript"src="AddLike.js"></script>
+    <!--link href="../CSS/login.css" type="text/css" rel="stylesheet"/-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -33,7 +36,7 @@
             <p>"${UserPost.getName()}"</p>
             <p>"${UserPost.getContent()}"</p>
             <p>"${UserPost.getLike()}"
-                <button id="addLike" type="button" myAttr="${UserPost._id}">Like</button>
+                <button class="addLike" type="button" myAttr="${UserPost._id}">Like</button>
             </p>
             <p><img id="image" src="${UserPost.getImage()}" alt="image"/></p>
             <input type="hidden" name="longitude" value="${UserPost.getLocation().getLongitude()}">

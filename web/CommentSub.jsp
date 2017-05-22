@@ -19,12 +19,12 @@
         <p>${Post_comments.comment}</p>
     </c:forEach>
 </div>
-<div class="cmtname"></div>
+<div id="'cmtname'+${UserPost._id}"></div>
 <br/>
-<div class="cmtcontext"></div>
+<div id="'cont'+${UserPost._id}"></div>
 <div>
-    <textarea id="comArea" name="comtcontent" rows="6" cols="65"></textarea>
-    <button id="addComs" type="button" myAttr="${UserPost._id}"> Add</button>
+    <textarea id="${UserPost._id}" name="comtcontent" rows="6" cols="65"></textarea>
+    <button class="addComs" type="button" myAttr="${UserPost._id}"> Add</button>
 </div>
 <hr/>
 </body>

@@ -2,20 +2,23 @@
  * Created by yangyangli on 5/20/17.
  */
 $(function () {
-    $("#addComs").click(addComments);
+    $(".addComs").click(addComments);
 
 });
 
 function addComments(event) {
     event.preventDefault();
-    var comt = $("#comArea").val();
+    alert("into the inner comments");
     var myPostId = $(this).attr("myAttr");
+    alert(myPostId );
+    var comt = $("#"+myPostId).val();
+    alert(comt);
     var jsonStr = {
         "postId": myPostId,
         "content": comt,
     };
     $.ajax({
-        url: 'LikeServlet',
+        url: 'ComtServlet',
         type: 'POST',
         dataType: 'text json',
         contentType: 'application/json; charset=utf-8',
@@ -30,7 +33,7 @@ function addComments(event) {
 
     var callback = function (data) {
         if (data.status == 200) {
-            location.reload();
+           location.reload();
         } else {
             alert("fail");
         }

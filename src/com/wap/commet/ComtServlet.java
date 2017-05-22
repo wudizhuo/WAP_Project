@@ -30,7 +30,6 @@ public class ComtServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("User");
         String json = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
-
         CommentJson commentJson = new Gson().fromJson(json, CommentJson.class);
         Comment e = new Comment(user.getName(), commentJson.content);
 
