@@ -2,7 +2,6 @@
  * Created by yangyangli on 5/21/17.
  */
 $(function () {
-    alter("for like");
     $(".addLike").click(addLike);
 });
 function addLike() {
