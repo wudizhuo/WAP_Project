@@ -13,6 +13,7 @@
     <script type="text/javascript" src="js/AddComments.js"></script>
     <script type="text/javascript" src="js/AddLike.js"></script>
     <script type="text/javascript" src="js/DeletePost.js"></script>
+    <script type="text/javascript" src="js/dashboard.js"></script>
     <link href="CSS/postData.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
