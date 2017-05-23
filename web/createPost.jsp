@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: hatc1
+  User: Cao Ha
   Date: 5/19/2017
   Time: 12:11 PM
   To change this template use File | Settings | File Templates.
@@ -23,7 +23,7 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Create post</span>
+            <span class="mdl-layout-title">WAP Project</span>
         </div>
     </header>
 
@@ -79,9 +79,6 @@
         </form>
 
     </div>
-
-
-
 
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">WAP Project</span>
