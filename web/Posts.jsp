@@ -9,5 +9,7 @@
     pageContext.setAttribute("posts", posts);
 %>
 <div class="post_data" style="overflow: scroll; height: 100%;">
-    <%@include file="postContent.jsp" %>
+    <c:forEach items="${posts}" var="UserPost">
+        <%@include file="postContent.jsp" %>
+    </c:forEach>
 </div>

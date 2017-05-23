@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,24 +29,27 @@ public class PostMoreServlet extends HttpServlet {
         int length = (int) data_store.getlength();
 
         String json = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
-        System.out.println("-----" + json);
-        int more = new Gson().fromJson(json, GetMoreJson.class).more;
+        Gson gson = new Gson();
+        int more = gson.fromJson(json, GetMoreJson.class).more;
 
         if (userPosts.size() == length) {
-            //TODO
-            //have get all
+            response.getWriter().println("no more data");
+            return;
         }
 
         if ((userPosts.size() + more) > length) {
             more = length - userPosts.size();
         }
 
-        userPosts.addAll(data_store.getMorePostData(userPosts.size(), more));
+        List<PostData> morePostData = data_store.getMorePostData(userPosts.size(), more);
+        userPosts.addAll(morePostData);
         servletContext.setAttribute("UserPosts", userPosts);
 
-        response.setContentType("text/plain");
+        response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         response.setStatus(HttpServletResponse.SC_OK);
-        response.getWriter().println("success");
+        PrintWriter writer = response.getWriter();
+        writer.println(gson.toJson(morePostData));
+        writer.flush();
     }
 }
