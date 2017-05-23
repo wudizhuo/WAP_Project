@@ -16,7 +16,10 @@ import java.util.List;
 @Entity("post_data")
 @Data
 public class PostData extends BaseModel {
-    public static final String fileSavePath = "D:/GoogleDrive/US_Dream/CS472/Project/WAP_Project/out/artifacts/WAP_Project_war_exploded/images/";
+    //For windows
+    //public static final String fileSavePath = "D:/GoogleDrive/US_Dream/CS472/Project/WAP_Project/out/artifacts/WAP_Project_war_exploded/images/";
+    //For MacOS
+    public static final String fileSavePath = "/Users/yangyangli/Documents/WAP_Project/out/artifacts/WAP_Project1_war_exploded/images";
     private String _id;
     private String name;
     private String title;
