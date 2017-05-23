@@ -29,7 +29,7 @@
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="./createPost.jsp">Create</a>
             <a class="mdl-navigation__link" href="./weather.jsp">Weather</a>
-            <a class="mdl-navigation__link" href="">User Profile</a>
+            <a class="mdl-navigation__link" href="./UserProfile.jsp">User Profile</a>
         </nav>
     </div>
     <main class="mdl-layout__content">
