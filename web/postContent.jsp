@@ -2,7 +2,7 @@
     <p class="post_name">"${UserPost.getName()}"</p>
     <p class="post_content">"${UserPost.getContent()}"</p>
     <p class="post_like">"${UserPost.getLike()}"
-        <button id="addLike" type="button" myAttr="${UserPost._id}">Like</button>
+        <button id="addLike" class="addLike" type="button" myAttr="${UserPost._id}">Like</button>
         <button id="deleteLike" class="deleteLike" type="button" myAttr="${UserPost._id}">Delete</button>
     </p>
     <c:forEach items="${UserPost.getImages()}" var="image">

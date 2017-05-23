@@ -8,11 +8,8 @@ $(function () {
 
 function addComments(event) {
     event.preventDefault();
-    alert("into the inner comments");
     var myPostId = $(this).attr("myAttr");
-    alert(myPostId );
     var comt = $("#"+myPostId).val();
-    alert(comt);
     var jsonStr = {
         "postId": myPostId,
         "content": comt,

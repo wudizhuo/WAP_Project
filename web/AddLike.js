@@ -6,7 +6,6 @@ $(function () {
 });
 function addLike() {
 var myPostId = $(this).attr("myAttr");
-alert(myPostId);
 var jsonStrLike = {
         "postId": myPostId,
     };
