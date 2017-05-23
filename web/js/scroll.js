@@ -7,7 +7,7 @@ $(function () {
         alert("Application is Loading...")
       } else {
         isLoading = true;
-        addPostDatas(num++);
+        addPostDatas(num);
       }
     }
   });
