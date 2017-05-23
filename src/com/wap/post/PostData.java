@@ -5,6 +5,7 @@ import com.wap.common.BaseModel;
 import lombok.Data;
 import org.mongodb.morphia.annotations.Entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ import java.util.List;
 
 @Entity("post_data")
 @Data
-public class PostData extends BaseModel{
+public class PostData extends BaseModel {
     public static final String fileSavePath = "D:/GoogleDrive/US_Dream/CS472/Project/WAP_Project/out/artifacts/WAP_Project_war_exploded/images/";
     private String _id;
     private String name;
@@ -57,6 +58,9 @@ public class PostData extends BaseModel{
     }
 
     public List<Comment> getComments() {
+        if (comments == null) {
+            comments = new ArrayList<>();
+        }
         return comments;
     }
 
