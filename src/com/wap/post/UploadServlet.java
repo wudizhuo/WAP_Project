@@ -48,7 +48,7 @@ public class UploadServlet extends HttpServlet {
         List<String> images_tmp = map.getFileNames("file");
         List<String> images = new ArrayList<String>();
             for (String img: images_tmp) {
-                images.add(PostData.fileSavePath+ img);
+                images.add("images/"+ img);
             }
 
         post.setImages(images);

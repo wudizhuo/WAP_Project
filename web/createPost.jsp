@@ -28,27 +28,24 @@
     </header>
 
     <div class="content">
-
         <form action="UploadServlet" method="post" enctype="multipart/form-data">
             <label for="post_title">Post title</label>
-            <div class="post">
-                <input id="post_title" name="post_title" type="text" data-length="10">
-            </div>
-            <div class="post_date">
+            <div>
+                <input id="post_title" name="post_title" type="text">
+            </div><br>
+            <div >
                 <label for="post_date">Date travelled</label>
-                <div class="post">
+                <div>
                     <input type="date" id = "post_date" class="datepicker">
-                </div>
+                </div><br>
                 <div >
-                    <div class="post_content">
-                        <label for="post_content">Post content</label>
-                        <div class="post">
-                        <textarea id="post_content" name = "post_content"
-                                  class="materialize-textarea" data-length="500"></textarea>
-                        </div>
+                    <label for="post_content">Post content</label>
+                    <div >
+                    <textarea id="post_content" name = "post_content" rows="20" cols="100"
+                              data-length="500"></textarea>
                     </div>
                 </div>
-            </div>
+            </div><br>
             <input type="file" id="file" name="file" accept="image/*"  multiple="muliple" required/>
             <c:if test="${not empty parts.file}"> Files successfully uploaded!</c:if>
 
@@ -69,7 +66,7 @@
                 }
 
                 function fail(msg) {
-                    console.log(msg.code + msg.message); // TODO: Change to use information from User
+                    console.log(msg.code + msg.message);
                 }
 
             </script>

@@ -2,8 +2,8 @@
   "name": "Leyou Hong",
   "content": "I love Hangzhou.",
   "images": [
-      "../images/hangzhou.jpg",
-      "../images/ningbo.jpg"
+      "images/hangzhou.jpg",
+      "images/ningbo.jpg"
   ],
   "comments": [
     {
