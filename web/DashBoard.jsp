@@ -10,9 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script src="js/scroll.js"></script>
-    <script type="text/javascript" src="AddComments.js"></script>
-    <script type="text/javascript" src="AddLike.js"></script>
-    <script type="text/javascript" src="DeletePost.js"></script>
+    <script type="text/javascript" src="js/AddComments.js"></script>
+    <script type="text/javascript" src="js/AddLike.js"></script>
+    <script type="text/javascript" src="js/DeletePost.js"></script>
     <link href="CSS/postData.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>

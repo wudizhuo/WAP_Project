@@ -8,3 +8,10 @@
     overflow: scroll;
     text-align: center;
 }
+
+.cmtnamestyle {
+    tapping: 2px;
+    marging-top: 1px;
+    margin-bottom: 1px;
+
+}

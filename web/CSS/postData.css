@@ -1,4 +1,21 @@
 #images {
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
+}
+
+.cmtnamestyle {
+    font-size: 15px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    tapping-top: 1px;
+    tapping-botton: 1px;
+}
+
+.cmtcontstyle {
+    font-size: 15px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    tapping-top: 1px;
+    tapping-botton: 1px;
+    font-style: italic;
 }
