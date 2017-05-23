@@ -6,7 +6,6 @@ $(function () {
 });
 function deleteLike() {
 var myPostId = $(this).attr("myAttr");
-alert(myPostId+"INTO TOE JS FOR AJAX");
 var jsonStrLike = {
         "postId": myPostId,
     };
