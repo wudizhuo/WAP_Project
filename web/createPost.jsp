@@ -48,6 +48,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             <input type="file" id="file" name="file" accept="image/*"  multiple="muliple" required/>
             <c:if test="${not empty parts.file}"> Files successfully uploaded!</c:if>
 
@@ -80,17 +81,19 @@
 
     </div>
 
-    <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">WAP Project</span>
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="./createPost.jsp">Create</a>
-            <a class="mdl-navigation__link" href="./weather.jsp">Weather</a>
-            <a class="mdl-navigation__link" href="">User Profile</a>
-        </nav>
-    </div>
+
     <main class="mdl-layout__content">
         <div class="page-content"><!-- Your content goes here --></div>
     </main>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">WAP Project</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="./DashBoard.jsp">All post</a>
+            <a class="mdl-navigation__link" href="./createPost.jsp">Create</a>
+            <a class="mdl-navigation__link" href="./weather.jsp">Weather</a>
+            <a class="mdl-navigation__link" href="./UserProfile.jsp">User Profile</a>
+        </nav>
+    </div>
 </div>
 </body>
 </html>

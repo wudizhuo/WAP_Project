@@ -24,38 +24,36 @@
     
     <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
+    <header class="mdl-layout__header" id="head">
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <span class="mdl-layout-title">WAP Project</span>
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#head">Current time</a></li>
+                        <li><a href="#hourly">Next 5 days</a></li>
+                    </ul>
+
+                    <form class="navbar-form navbar-right" id="search-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Enter Location" class="form-control" id="search-term"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="search">Get Weather</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </header>
 
- 		<div class="navbar navbar-inverse navbar-fixed-top">
- 			<div class="container">
- 	 	 		<div class="navbar-header">
- 	 	 			<a href="index.html" class="navbar-brand">Weather 5 day 3 hours</a>
- 	 	 	 		<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
- 	 	 	 	 		<span class="icon-bar"></span>
- 	 	 	 	 		<span class="icon-bar"></span>
- 	 	 	 	 		<span class="icon-bar"></span>
- 	 	 	 		</button>
- 	 	 		</div>
- 	 	 		<div class="collapse navbar-collapse">
- 	 	 	 		<ul class="nav navbar-nav">	 	
- 	 	 	 	 		<li class="active"><a href="#home">Current time</a></li>
- 	 	 	 	 		<li><a href="#hourly">Next 5 days</a></li>
- 	 	 	 		</ul>
- 	 	 	 		
- 	 	 	 		<form class="navbar-form navbar-right" id="search-form">
- 	 	 	 	 		<div class="form-group">
- 	 	 	 	 	 		<input type="text" placeholder="Enter Location" class="form-control" id="search-term"/>
- 	 	 	 	 		</div> 	 	 	 	 		
- 	 	 	 	 		<button type="submit" class="btn btn-primary" id="search">Get Weather</button>
- 	 	 	 		</form> 	 	 	 	
- 	 	 		</div>
- 			</div>
- 		</div>
+
         
         <div class="container content" id="home">
             <header class="jumbotron hero-spacer jumbo">
@@ -87,7 +85,8 @@
             <div id="saved-search"></div>
         </div>
         
-        <div class="container content" id="hourly">
+        <div class="container content" id="hourly"><br>
+            <a href="#head">Back to current</a>
             <div class="panel panel-primary" id="hourly-panel">
                 <div class="panel-heading" id="panel-hourly-head">Next 5 days in</div>
                 <div class="panel-body" id="panel-hourly-content">
@@ -110,12 +109,13 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">WAP Project</span>
         <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="./DashBoard.jsp">All post</a>
             <a class="mdl-navigation__link" href="./createPost.jsp">Create</a>
             <a class="mdl-navigation__link" href="./weather.jsp">Weather</a>
-            <a class="mdl-navigation__link" href="">User Profile</a>
+            <a class="mdl-navigation__link" href="./UserProfile.jsp">User Profile</a>
         </nav>
     </div>
-        
+
         <script>
 
             $(".content").css("min-height",$(window).height());
